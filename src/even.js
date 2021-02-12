@@ -13,6 +13,7 @@ export default (name) => {
   let i = 0;
   while (i < 3) {
     const number = getRandomNumber(1, 15);
+    console.log('Answer "yes" if the number is even, otherwise answer "no".');
     console.log(`'Question: ${number}`);
     const answer = readlineSync.question('Answer: ', {
       trueValue: ['yes'],
