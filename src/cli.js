@@ -1,10 +1,11 @@
 import readlineSync from 'readline-sync';
-import even from '../src/even.js';
 
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${name}!`);
-export default name;
+export default () => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  return name;
+};
 
 export const printCorrect = () => console.log('Correct!');
 export const printNoIsCorrect = (name) => console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${name}!`);

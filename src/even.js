@@ -1,21 +1,25 @@
 import readlineSync from 'readline-sync';
-import name, { printCorrect, printNoIsCorrect, printYesIsCorrect, printFinal } from '../src/cli.js'
-import getRandomNumber from '../src/number.js';
+import {
+  printCorrect,
+  printNoIsCorrect,
+  printYesIsCorrect,
+  printFinal,
+} from './cli.js';
+import getRandomNumber from './number.js';
 
+const isEven = (evenNum) => evenNum % 2 === 0;
 
-
-export default function even(number) {
+export default (name) => {
   let i = 0;
-  const isEven = (number) => number % 2 === 0;
   while (i < 3) {
-    number = getRandomNumber(1,15);
+    const number = getRandomNumber(1, 15);
     console.log(`'Question: ${number}`);
     const answer = readlineSync.question('Answer: ', {
       trueValue: ['yes'],
-      falseValue: ['no']
+      falseValue: ['no'],
     });
-    if ((answer === true && isEven(number) === true) ||
-        (answer === false && isEven(number) === false)) {
+    if ((answer === true && isEven(number) === true)
+      || (answer === false && isEven(number) === false)) {
       printCorrect(name);
     } else if (answer === true && isEven(number) === false) {
       printNoIsCorrect(name);
@@ -24,7 +28,7 @@ export default function even(number) {
       printYesIsCorrect(name);
       return;
     }
-    i += 1
+    i += 1;
   }
   printFinal(name);
 };
