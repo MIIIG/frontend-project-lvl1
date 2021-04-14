@@ -28,7 +28,7 @@ export default (name) => {
         console.log('Nothing to operate!');
     }
     console.log('What is the result of the expression?');
-    console.log(`'Question: ${x} ${textOperator} ${y}`);
+    console.log(`Question: ${x} ${textOperator} ${y}`);
     const strAnswer = readlineSync.question('Your answer: ');
     const answer = Number(strAnswer);
     const result = operators[operatorIndex];
