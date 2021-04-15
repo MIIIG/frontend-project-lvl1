@@ -5,7 +5,7 @@ hexlet project 1
 
 [brain calc](https://asciinema.org/a/k3DW3KZNsK7aZ0sIDcqscr1cW)
 
-[![asciicast](https://asciinema.org/a/3VtyxL9C7TQZu0MG5agpiYBZ0.svg)](https://asciinema.org/a/3VtyxL9C7TQZu0MG5agpiYBZ0)[brain gcd]()
+[brain gcd](https://asciinema.org/a/3VtyxL9C7TQZu0MG5agpiYBZ0)
 
 [![Node CI](https://github.com/MIIIG/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/MIIIG/frontend-project-lvl1/actions)
 
