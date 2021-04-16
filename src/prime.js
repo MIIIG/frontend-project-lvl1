@@ -17,8 +17,7 @@ export default (name) => {
       }
       return x > 1;
     };
-    const boolResult = isPrime(x);
-    const result = (boolResult === true) ? 'yes' : 'no';
+    const result = (isPrime(x) === true) ? 'yes' : 'no';
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
     console.log(`Question: ${x}`);
     const answer = readlineSync.question('Your answer: ');

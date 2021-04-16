@@ -1,32 +1,25 @@
 import readlineSync from 'readline-sync';
 import {
   printCorrect,
-  printNoIsCorrect,
-  printYesIsCorrect,
+  printResultIsNotCorrect,
   printFinal,
 } from './cli.js';
 import getRandomNumber from './number.js';
 
-const isEven = (evenNum) => evenNum % 2 === 0;
-
 export default (name) => {
   let i = 0;
   while (i < 3) {
-    const number = getRandomNumber(1, 15);
+    const x = getRandomNumber(1, 15);
+    // eslint-disable-next-line no-shadow
+    const isEven = (x) => ((x % 2 === 0));
+    const result = (isEven(x) === true) ? 'yes' : 'no';
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
-    console.log(`'Question: ${number}`);
-    const answer = readlineSync.question('Answer: ', {
-      trueValue: ['yes'],
-      falseValue: ['no'],
-    });
-    if ((answer === true && isEven(number) === true)
-      || (answer === false && isEven(number) === false)) {
+    console.log(`'Question: ${x}`);
+    const answer = readlineSync.question('Answer: ');
+    if (answer === result) {
       printCorrect(name);
-    } else if (answer === true && isEven(number) === false) {
-      printNoIsCorrect(name);
-      return;
-    } else if (answer === false && isEven(number) === true) {
-      printYesIsCorrect(name);
+    } else if (answer !== result) {
+      printResultIsNotCorrect(name, result, answer);
       return;
     }
     i += 1;
